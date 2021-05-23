@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        {% for pizza in pizzas %}
+            <div class="col-sm">
+                {{ pizza.name }}
+                <b>{{ pizza.price }} грн</b>
+                <a href="pizzas/{{ pizza.id }}"><img src="media/{{ pizza.image }}" alt="My image"></a>
+                <p>{{ pizza.description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
